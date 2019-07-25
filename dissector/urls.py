@@ -12,7 +12,8 @@ from dissector.views import FrontPageView, ImageCompareView, ImageCompareDetailV
     ImageCompareRecipeSearchView, ImageCompareRecipeDetailView, ImageCompareRecipeSelectView, \
     ImageCompareRecipeSelectDetailView, image_compare_patch_view, \
     VersionCompareSelectView, VersionCompareView, VersionCompareRecipeDetailView, VersionCompareFileDiffView, \
-    version_compare_diff_view, VersionCompareContentView, version_compare_regenerate_view, ComparisonImportView
+    version_compare_diff_view, VersionCompareContentView, version_compare_regenerate_view, ComparisonImportView, \
+    LocalBinariesCompareView, LocalNativeBuildsView
 
 
 
@@ -21,15 +22,21 @@ urlpatterns = [
         FrontPageView.as_view(
             template_name='dissector/frontpage.html'),
         name='frontpage'),
-
     url(r'^comparison/import/$',
         ComparisonImportView.as_view(
             template_name='dissector/comparisonimport.html'),
         name="comparison_import"),
+    url(r'^LocalNativeBuilds/$',
+        LocalNativeBuildsView.as_view(
+            template_name='dissector/LocalNativeBuildss.html'),
+        name="LocalNativeBuilds"),
     url(r'^imagecompare/$',
         ImageCompareView.as_view(
             template_name='dissector/imagecompare.html'),
         name="image_comparison"),
+    url(r'^local_build_diff/$',
+        LocalBinariesCompareView.as_view(),
+        name="local_binaries_compare"),
     url(r'^imagecompare/search/(?P<pk>[-\w]+)/$',
         ImageCompareRecipeSearchView.as_view(
             template_name='dissector/imagecomparesearch.html'),

@@ -18,6 +18,7 @@ import settings
 urlpatterns = [
     url(r'^layerindex/', include('dissector.urls')),
     url(r'^layerindex/', include('layerindex.urls')),
+    url(r'^newview/', include('newview.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^accounts/password_reset/$',
         CaptchaPasswordResetView.as_view(
@@ -52,5 +53,5 @@ if 'rrs' in settings.INSTALLED_APPS:
     ]
 
 urlpatterns += [
-    url(r'.*', RedirectView.as_view(url='/layerindex/', permanent=False)),
+    url(r'.*', RedirectView.as_view(url='/newview/', permanent=False)),
 ]

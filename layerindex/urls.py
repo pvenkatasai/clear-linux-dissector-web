@@ -35,7 +35,7 @@ router.register(r'layers', restviews.LayerViewSet, 'layers')
 
 urlpatterns = [
     # FIXME: REST API disabled for now
-    #url(r'^api/', include(router.urls)),
+    url(r'^api/', include(router.urls)),
 
     url(r'^layers/$',
         RedirectView.as_view(url=reverse_lazy('layer_list', args=('master',)), permanent=False)),

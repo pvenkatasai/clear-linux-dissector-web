@@ -177,6 +177,28 @@ class VersionComparisonDifference(models.Model):
             return 'Modified %s' % self.pn
 
 
+class LocalBuildDiffModel(models.Model):
+    title       = models.CharField(max_length=120) # max_length = required
+    description = models.TextField(blank=True, null=True)
+    price       = models.DecimalField(decimal_places=2, max_digits=50)
+    summary     = models.TextField(blank=False, null=False)
+    featured    = models.BooleanField(default=False) # null=True, default=True
+
+    def get_absolute_url(self):
+        return reverse('dissector:product-details', kwargs={"id": self.id}) #f"/products/{self.id}/"
+
+'''
+#class LocalBuildDiffModel(models.Model):
+#    name = models.CharField(max_length=200)
+#    from_build = models.TextField()
+#  
+#    def publish(self):
+#        self.published_date = timezone.now()
+#        self.save()
+
+    def __str__(self):
+        return self.title
+'''
 class VersionComparisonFileDiff(models.Model):
     STATUS_CHOICES = (
         ('I', 'In progress'),

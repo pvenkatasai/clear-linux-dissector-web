@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+    <title>Coding for Entrepreneurs is doing Try Django</title>
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+</style>
+</head>
+<body>
+
+<h1>{{ message }} </h1>
+<table>
+  <tr>
+    <th>S.No</th>
+    <th>Build</th>
+  </tr>
+{% for abc in Builds %}
+  <tr>
+    <td>{{ forloop.counter }}</td>
+    <td><a href="http://milkomeda02.iind.intel.com/release/apl/master/gp2.0/{{ abc }}">{{ abc }}</a></td>
+  </tr>
+{% endfor %}
+</table>
+</body>
+</html>
