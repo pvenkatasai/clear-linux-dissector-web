@@ -21,7 +21,7 @@ from django_registration.validators import (DEFAULT_RESERVED_NAMES,
 import settings
 from layerindex.models import Branch
 from dissector.models import (ImageComparisonRecipe,
-                               ImageComparison)
+                               ImageComparison,LocalBuildDiffModel)
 
 from layerindex.forms import StyledForm, StyledModelForm
 
@@ -148,3 +148,55 @@ class ComparisonImportForm(forms.Form):
             if Branch.objects.filter(name=name).exists():
                 raise forms.ValidationError('A branch of this name already exists - select "Update existing branch" instead if that is what you want to do')
         return name
+
+
+class LocalBuildDiffForm(forms.Form):
+    '''
+    title       = forms.CharField(label='', 
+                    widget=forms.TextInput(attrs={"placeholder": "Your title"}))
+    description = forms.CharField(
+                        required=False, 
+                        widget=forms.Textarea(
+                                attrs={
+                                    "placeholder": "Your description",
+                                    "class": "new-class-name two",
+                                    "id": "my-id-for-textarea",
+                                    "rows": 20,
+                                    'cols': 120
+                                }
+                            )
+                        )
+    price       = forms.DecimalField(initial=199.99)
+    '''
+    IMPORT_TYPE_CHOICES=[
+        ('U','Upstream Clear Linux'),
+        ('D','Clear Linux derivative')
+        ]
+    DESTINATION_CHOICES=[
+        ('N','Create new branch'),
+        ('E','Update existing branch')
+        ]
+    import_type = forms.ChoiceField(choices=IMPORT_TYPE_CHOICES, widget=forms.RadioSelect, initial='U')
+    destination = forms.ChoiceField(choices=DESTINATION_CHOICES, widget=forms.RadioSelect, initial='E')
+    name = forms.CharField(max_length=50, help_text='Name for the new comparison branch (no spaces allowed)', required=False)
+    short_description = forms.CharField(max_length=50, help_text='Short description for the new comparison branch', required=False)
+    branch = NameBranchChoiceField(queryset=Branch.objects.filter(comparison=True).filter(hidden=False).order_by('name'), required=False)
+    release = forms.IntegerField(widget=forms.TextInput, required=False)
+    latest = forms.BooleanField(label='Get latest', required=False, initial=True)
+    url = forms.CharField(label='Source tarball URL', max_length=255, required=False, help_text='URL to fetch derivative source tarball', widget=forms.URLInput)
+    class Meta:
+        model = LocalBuildDiffModel
+        fields = [
+            'import_type',
+            'destination',
+            'name',
+            'short_description',
+            'branch',
+            'release',
+            'url',
+            #'title',
+            #'description',
+            #'price',
+            #'summary',
+            #'featured'
+        ]

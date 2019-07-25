@@ -1,0 +1,279 @@
+﻿{% extends "new_base.html" %}
+{% load i18n %}
+{% load staticfiles %}
+
+{% comment %}
+
+  layerindex-web - Front page
+
+  Copyright (C) 2019 Intel Corporation
+  Licensed under the MIT license, see COPYING.MIT for details
+
+{% endcomment %}
+
+
+{% block content_diff_view %}
+{% autoescape on %}
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-body container-body">
+                <div class="col-lg-1">
+                    <!--<img src="assets/img/fast-forward.png" />
+                    <img src="assets/img/fast-forward.png" />-->
+                </div>
+                <div class="col-lg-10 table-responsive">
+                    <table border="0" class="table version-table">
+                        <thead>
+                            <tr>
+                                <td></td>
+                                <th>Version No</th>
+                                <th>Coverty</th>
+                                <th>Graphana</th>
+                                <th>Report 3</th>
+                                <th>Report 3</th>
+                                <th>Report 3</th>
+                                <th>Report 3</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr>
+                                <td class="tr">
+                                    <img class="img-dropdown" data-toggle="collapse" src="{% static "img/arrowhead-pointing-to-the-right.png" %}" />
+                                </td>
+                                <td>
+                                    <div class="list-dropdown">
+                                        CL-2810006
+                                    </div>
+                                </td>
+                                <td align="center">
+                                    <span class="glyphicon glyphicon-ok"></span>
+                                </td>
+                                <td align="center">
+                                    <span class="glyphicon glyphicon-ok"></span>
+                                </td>
+                                <td align="center">
+                                    <span class="glyphicon glyphicon-ok"></span>
+                                </td>
+                                <td align="center">
+                                    <span class="glyphicon glyphicon-remove"></span>
+                                <td align="center">
+                                    <span class="glyphicon glyphicon-remove"></span>
+                                </td>
+                                <td align="center">
+                                    <span class="glyphicon glyphicon-ok"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="8">
+                                    <div class="list-dropdown-container panel panel-default">
+                                        <div class="panel-body">
+                                            <div class="row">
+                                                <div class="col-lg-8">
+                                                    <table class="table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Add</th>
+                                                                <th>Modify</th>
+                                                                <th>Upgrade</th>
+                                                                <th>Remove</th>
+                                                                <th>Update</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody align="center">
+                                                            <tr>
+                                                                <td>66</td>
+                                                                <td>12</td>
+                                                                <td>11</td>
+                                                                <td>5</td>
+                                                                <td>4</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+
+                                                <div class="col-lg-4">
+                                                    <div id="container" style="margin: 0 auto"></div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="tr">
+                                    <img class="img-dropdown" data-toggle="collapse" src="{% static "img/arrowhead-pointing-to-the-right.png" %}" />
+                                </td>
+                                <td>
+                                    <div class="list-dropdown">
+                                        CL-2810005
+                                    </div>
+                                </td>
+                                <td align="center">
+                                    <span class="glyphicon glyphicon-ok"></span>
+                                </td>
+                                <td align="center">
+                                    <span class="glyphicon glyphicon-ok"></span>
+                                </td>
+                                <td align="center">
+                                    <span class="glyphicon glyphicon-ok"></span>
+                                </td>
+                                <td align="center">
+                                    <span class="glyphicon glyphicon-remove"></span>
+                                <td align="center">
+                                    <span class="glyphicon glyphicon-remove"></span>
+                                </td>
+                                <td align="center">
+                                    <span class="glyphicon glyphicon-ok"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="8">
+                                    <div class="list-dropdown-container panel panel-default">
+                                        <div class="panel-body">
+                                            <p>Paragraph</p>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="tr">
+                                    <img class="img-dropdown" data-toggle="collapse" src="{% static "img/arrowhead-pointing-to-the-right.png" %}" />
+                                </td>
+                                <td>
+                                    <div class="list-dropdown">
+                                        CL-2810004
+                                    </div>
+                                </td>
+                                <td align="center">
+                                    <span class="glyphicon glyphicon-ok"></span>
+                                </td>
+                                <td align="center">
+                                    <span class="glyphicon glyphicon-ok"></span>
+                                </td>
+                                <td align="center">
+                                    <span class="glyphicon glyphicon-ok"></span>
+                                </td>
+                                <td align="center">
+                                    <span class="glyphicon glyphicon-remove"></span>
+                                <td align="center">
+                                    <span class="glyphicon glyphicon-remove"></span>
+                                </td>
+                                <td align="center">
+                                    <span class="glyphicon glyphicon-ok"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="8">
+                                    <div class="list-dropdown-container panel panel-default">
+                                        <div class="panel-body">
+                                            <p>Paragraph</p>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <div class="list-dropdown">
+                                        CL-28100
+                                    </div>
+                                </td>
+                                <td align="center">
+                                    <span class="glyphicon glyphicon-ok"></span>
+                                </td>
+                                <td align="center">
+                                    <span class="glyphicon glyphicon-ok"></span>
+                                </td>
+                                <td align="center">
+                                    <span class="glyphicon glyphicon-ok"></span>
+                                </td>
+                                <td align="center">
+                                    <span class="glyphicon glyphicon-remove"></span>
+                                <td align="center">
+                                    <span class="glyphicon glyphicon-remove"></span>
+                                </td>
+                                <td align="center">
+                                    <span class="glyphicon glyphicon-ok"></span>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+{% endautoescape %}
+{% endblock %}
+
+    {% block content_index_script %}
+    {% autoescape on %}
+    <script>
+        $('.img-dropdown').click(function () {
+            //$('.list-dropdown-container').hide();
+            let togglediv = $(this).closest('tr').next().find('div'); //.find('.list-dropdown-container');
+            if (togglediv.hasClass('list-dropdown-container'))
+                togglediv.removeClass('list-dropdown-container');
+            else
+                togglediv.addClass('list-dropdown-container');
+
+        });
+
+
+        // Build the chart
+        Highcharts.chart('container', {
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                type: 'pie'
+            },
+            title: {
+                text: 'Pie Chart'
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: false
+                    },
+                    showInLegend: true
+                }
+            },
+            series: [{
+                name: '',
+                colorByPoint: true,
+                data: [{
+                    name: 'Add',
+                    y: 61.41,
+                    sliced: true,
+                    selected: true
+                }, {
+                    name: 'Modify',
+                    y: 11.84
+                }, {
+                    name: 'Upgrade',
+                    y: 10.85
+                }, {
+                    name: 'Remove',
+                    y: 4.67
+                }, {
+                    name: 'Update',
+                    y: 4.18
+                }]
+            }]
+        });      
+    </script>
+    {% endautoescape %}
+    {% endblock %}

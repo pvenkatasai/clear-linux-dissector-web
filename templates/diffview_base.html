@@ -1,0 +1,98 @@
+{% comment %}
+
+  layerindex-web - base template for output pages
+
+  Copyright (C) 2013, 2018 Intel Corporation
+  Licensed under the MIT license, see COPYING.MIT for details
+
+{% endcomment %}
+
+
+{% load i18n %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static "css/bootstrap.css" %}" />
+    <!-- <link rel="stylesheet" href="{% static "css/additional.css" %}" /   -->
+    <link rel="stylesheet" href="{% static "css/comparison-tool-styles.css" %}" />
+    <link rel="icon" type="image/vnd.microsoft.icon" href="{% static "img/favicon.ico" %}" />
+    <title>{{ site_name }}{% block title_append %} - {% endblock %}</title>
+    {% block head_extra %}
+    {% endblock %}
+</head>
+
+<body>
+    {% block header %}
+    {% autoescape on %}
+        <div class="header-bkgd">
+        <nav class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">CLEAR LINUX DISSECTOR</a>
+                </div>
+                <div id="navbar">
+                    <div class="navbar-form navbar-right">
+                        {% block userfunctions %}
+                        {% if user.is_authenticated %}
+                        <div class="dropdown account">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ user.username }} <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{% url 'logout' %}">{% trans "Log out" %}</a></li>
+                                <li><a href="{% url 'password_change' %}">{% trans "Change password" %}</a></li>
+                                <li><a href="{% url 'profile' %}?return_to={{ request.path }}">{% trans "Edit profile" %}</a></li>
+                            </ul>
+                        </div>
+                        {% else %}
+                    
+                        <a class="btn btn-default navbar-btn" href="{% url 'login' %}{% if login_return_url %}?next={{ login_return_url }}{% endif %}">{% trans "Log in" %}</a>
+       
+                        {% endif %}
+
+                        {% endblock %}
+                    </div>
+                </div>
+                <!--/.navbar-collapse -->
+            </div>
+        </nav>
+        {% block hero %}
+        {% endblock %}
+    </div>
+    
+    {% endautoescape %}
+    {% endblock %}
+
+{% block contenttag %}<div id="content" class="container top-padded">{% endblock %}
+        {% if notices %}
+            {% for notice in notices %}
+            <div class="alert {% if notice.level == 'I' %}alert-info{% elif notice.level == 'S' %}alert-success{% elif notice.level == 'W' %}alert-warning{% elif notice.level == 'E' %}alert-danger{% endif %}">{{ notice.text_sanitised|safe|urlize }}</div>
+            {% endfor %}
+        {% endif %}
+        {% if messages %}
+            {% for message in messages %}
+            <div{% if message.tags %} class="alert {{ message.tags }}"{% endif %}>{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+        {% block content %}{% endblock %}
+    </div>
+
+
+        {% block footer %}
+        <div class="container">
+            <footer>
+                <p class="pull-right">Clear Linux Dissector version {{ app_version }}</p>
+            </footer>
+        </div>
+        {% endblock %}
+
+    <script src="{% static "js/jquery-3.3.1.js" %}"></script>
+    <script src="{% static "js/bootstrap.js" %}"></script>
+{% block scripts %}
+{% endblock %}
+
+</body>
+</html>

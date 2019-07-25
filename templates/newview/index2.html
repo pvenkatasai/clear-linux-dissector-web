@@ -1,0 +1,735 @@
+﻿{% extends "new_base.html" %}
+{% load i18n %}
+{% load staticfiles %}
+
+{% comment %}
+
+  layerindex-web - Front page
+
+  Copyright (C) 2019 Intel Corporation
+  Licensed under the MIT license, see COPYING.MIT for details
+
+{% endcomment %}
+
+
+{% block content_diff_view %}
+{% autoescape on %}
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-body container-body">
+                <div class="col-lg-1">
+                    <!--<img src="assets/img/fast-forward.png" />
+                    <img src="assets/img/fast-forward.png" />-->
+                </div>
+                <div class="col-lg-10 table-responsive">
+                    <table border="0" class="table version-table">
+                        <thead>
+                            <tr>
+                                <td></td>
+                                <th>Version No</th>
+                                <th>Coverty</th>
+                                <th>Graphana</th>
+                                <th>BDBA</th>
+                                <th>Report 3</th>
+                                <th>Report 3</th>
+                                <th>Report 3</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr>
+                                <td class="tr">
+                                    <img class="img-dropdown" data-toggle="collapse" src="{% static "img/arrowhead-pointing-to-the-right.png" %}" />
+                                </td>
+                                <td>
+                                    <div class="list-dropdown">
+                                        CL-2810006
+                                    </div>
+                                </td>
+                                <td align="center">
+                                    <span class="glyphicon glyphicon-ok"></span>
+                                </td>
+                                <td align="center">
+                                    <span class="glyphicon glyphicon-ok"></span>
+                                </td>
+                                <td align="center">
+                                    <span class="glyphicon glyphicon-ok"></span>
+                                </td>
+                                <td align="center">
+                                    <span class="glyphicon glyphicon-remove"></span>
+                                <td align="center">
+                                    <span class="glyphicon glyphicon-remove"></span>
+                                </td>
+                                <td align="center">
+                                    <span class="glyphicon glyphicon-ok"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="8">
+                                    <div class="list-dropdown-container panel panel-default">
+                                        <div class="panel-body">
+                                            <div class="row">
+                                                <div class="col-lg-8">
+                                                    <table class="table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Add</th>
+                                                                <th>Modify</th>
+                                                                <th>Upgrade</th>
+                                                                <th>Remove</th>
+                                                                <th>Update</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody align="center">
+                                                            <tr>
+                                                                <td><button style="background-color: rgb(124, 181, 236);"type="button" class="btn btn-lg" data-toggle="modal" data-target="#2810006">00</button></td>
+                                                                <td><button style="background-color: rgb(67, 67, 72);" type="button" class="btn btn-lg" data-toggle="modal" data-target="#2810006">01</button></td>
+                                                                <td><button style="background-color: green;" type="button" class="btn btn-lg" data-toggle="modal" data-target="#2810006">00</button></td>
+                                                                <td><button style="background-color: orange;color: #fff;" type="button" class="btn btn-lg" data-toggle="modal" data-target="#2810006">00</button></td>
+                                                                <td><button style="background-color: rgb(128,133,233);color: #fff;" type="button" class="btn btn-lg" data-toggle="modal" data-target="#2810006">00</button></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+
+                                                <div class="col-lg-4">
+                                                    <div id="chart2810006" style="margin: 0 auto"></div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="tr">
+                                    <img class="img-dropdown" data-toggle="collapse" src="{% static "img/arrowhead-pointing-to-the-right.png" %}" />
+                                </td>
+                                <td>
+                                    <div class="list-dropdown">
+                                        CL-2810005
+                                    </div>
+                                </td>
+                                <td align="center">
+                                    <span class="glyphicon glyphicon-ok"></span>
+                                </td>
+                                <td align="center">
+                                    <span class="glyphicon glyphicon-ok"></span>
+                                </td>
+                                <td align="center">
+                                    <span class="glyphicon glyphicon-ok"></span>
+                                </td>
+                                <td align="center">
+                                    <span class="glyphicon glyphicon-remove"></span>
+                                <td align="center">
+                                    <span class="glyphicon glyphicon-remove"></span>
+                                </td>
+                                <td align="center">
+                                    <span class="glyphicon glyphicon-ok"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="8">
+                                    <div class="list-dropdown-container panel panel-default">
+                                        <div class="panel-body">
+                                            <div class="row">
+                                                <div class="col-lg-8">
+                                                    <table class="table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Add</th>
+                                                                <th>Modify</th>
+                                                                <th>Upgrade</th>
+                                                                <th>Remove</th>
+                                                                <th>Update</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody align="center">
+                                                            <tr>
+                                                                <td><button style="background-color: rgb(124, 181, 236);" type="button" class="btn btn-lg" data-toggle="modal" data-target="#2810005">00</button></td>
+                                                                <td><button style="background-color: rgb(67, 67, 72);" type="button" class="btn btn-lg" data-toggle="modal" data-target="#2810005">02</button></td>
+                                                                <td><button style="background-color: green;" type="button" class="btn btn-lg" data-toggle="modal" data-target="#2810005">03</button></td>
+                                                                <td><button style="background-color: orange;color: #fff;" type="button" class="btn btn-lg" data-toggle="modal" data-target="#2810005">00</button></td>
+                                                                <td><button style="background-color: rgb(128,133,233);color: #fff;" type="button" class="btn btn-lg" data-toggle="modal" data-target="#2810005">00</button></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+
+                                                <div class="col-lg-4">
+                                                    <div id="chart2810005" style="margin: 0 auto"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="tr">
+                                    <img class="img-dropdown" data-toggle="collapse" src="{% static "img/arrowhead-pointing-to-the-right.png" %}" />
+                                </td>
+                                <td>
+                                    <div class="list-dropdown">
+                                        CL-2810004
+                                    </div>
+                                </td>
+                                <td align="center">
+                                    <span class="glyphicon glyphicon-ok"></span>
+                                </td>
+                                <td align="center">
+                                    <span class="glyphicon glyphicon-ok"></span>
+                                </td>
+                                <td align="center">
+                                    <span class="glyphicon glyphicon-ok"></span>
+                                </td>
+                                <td align="center">
+                                    <span class="glyphicon glyphicon-remove"></span>
+                                <td align="center">
+                                    <span class="glyphicon glyphicon-remove"></span>
+                                </td>
+                                <td align="center">
+                                    <span class="glyphicon glyphicon-ok"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="8">
+                                    <div class="list-dropdown-container panel panel-default">
+                                        <div class="panel-body">
+                                            <div class="row">
+                                                <div class="col-lg-8">
+                                                    <table class="table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Add</th>
+                                                                <th>Modify</th>
+                                                                <th>Upgrade</th>
+                                                                <th>Remove</th>
+                                                                <th>Update</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody align="center">
+                                                            <tr>
+                                                                <td><button style="background-color: rgb(124, 181, 236);" type="button" class="btn btn-lg" data-toggle="modal" data-target="#2810004">00</button></td>
+                                                                <td><button style="background-color: rgb(67, 67, 72);" type="button" class="btn btn-lg" data-toggle="modal" data-target="#2810004">01</button></td>
+                                                                <td><button style="background-color: green;" type="button" class="btn btn-lg" data-toggle="modal" data-target="#2810004">10</button></td>
+                                                                <td><button style="background-color: orange;color: #fff;" type="button" class="btn btn-lg" data-toggle="modal" data-target="#2810004">00</button></td>
+                                                                <td><button style="background-color: rgb(128,133,233);color: #fff;" type="button" class="btn btn-lg" data-toggle="modal" data-target="#2810004">00</button></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+
+                                                <div class="col-lg-4">
+                                                    <div id="chart2810004" style="margin: 0 auto"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tr">
+                                    <img class="img-dropdown" data-toggle="collapse" src="{% static "img/arrowhead-pointing-to-the-right.png" %}" />
+                                </td>
+                                <td>
+                                    <div class="list-dropdown">
+                                        CL-281113
+                                    </div>
+                                </td>
+                                <td align="center">
+                                    <span class="glyphicon glyphicon-ok"></span>
+                                </td>
+                                <td align="center">
+                                    <span class="glyphicon glyphicon-ok"></span>
+                                </td>
+                                <td align="center">
+                                    <span class="glyphicon glyphicon-ok"></span>
+                                </td>
+                                <td align="center">
+                                    <span class="glyphicon glyphicon-remove"></span>
+                                <td align="center">
+                                    <span class="glyphicon glyphicon-remove"></span>
+                                </td>
+                                <td align="center">
+                                    <span class="glyphicon glyphicon-ok"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="8">
+                                    <div class="list-dropdown-container panel panel-default">
+                                        <div class="panel-body">
+                                            <div class="row">
+                                                <div class="col-lg-8">
+                                                    <table class="table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Add</th>
+                                                                <th>Modify</th>
+                                                                <th>Upgrade</th>
+                                                                <th>Remove</th>
+                                                                <th>Update</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody align="center">
+                                                            <tr>
+                                                                <td><button style="background-color: rgb(124, 181, 236);" type="button" class="btn btn-lg" data-toggle="modal" data-target="#281113">02</button></td>
+                                                                <td><button style="background-color: rgb(67, 67, 72);" type="button" class="btn btn-lg" data-toggle="modal" data-target="#281113">05</button></td>
+                                                                <td><button style="background-color: green;" type="button" class="btn btn-lg" data-toggle="modal" data-target="#281113">07</button></td>
+                                                                <td><button style="background-color: orange;color: #fff;" type="button" class="btn btn-lg" data-toggle="modal" data-target="#281113">00</button></td>
+                                                                <td><button style="background-color: rgb(128,133,233);color: #fff;" type="button" class="btn btn-lg" data-toggle="modal" data-target="#281113">00</button></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+
+                                                <div class="col-lg-4">
+                                                    <div id="chart281113" style="margin: 0 auto"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <div class="list-dropdown">
+                                        CL-28100
+                                    </div>
+                                </td>
+                                <td align="center">
+                                    <span class="glyphicon glyphicon-ok"></span>
+                                </td>
+                                <td align="center">
+                                    <span class="glyphicon glyphicon-ok"></span>
+                                </td>
+                                <td align="center">
+                                    <span class="glyphicon glyphicon-ok"></span>
+                                </td>
+                                <td align="center">
+                                    <span class="glyphicon glyphicon-remove"></span>
+                                <td align="center">
+                                    <span class="glyphicon glyphicon-remove"></span>
+                                </td>
+                                <td align="center">
+                                    <span class="glyphicon glyphicon-ok"></span>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </div>
+        </div>
+    </div>    
+
+    <!-- Modal -->
+  <div class="modal fade" id="2810006" role="dialog">
+    <div class="modal-dialog" style="width: 1000px;">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title"></h4>
+        </div>
+        <div class="modal-body">
+          <table class="table">
+            <thead>
+                <tr>
+                    <th>Add</th>
+                    <th>Modify</th>
+                    <th>Upgrade</th>
+                    <th>Remove</th>
+                    <th>Update</th>
+                </tr>
+            </thead>
+            <tbody align="left">
+                <tr>
+                    <td>--</td>
+                    <td><a href="http://10.106.124.28:8000/layerindex/versioncompare/recipe/420593/" target="_blank">linux-iot-lts2018</a></td>
+                    <td>--</td>
+                    <td>--</button></td>
+                    <td>--</button></td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+      <!-- Modal -->
+  <div class="modal fade" id="2810004" role="dialog">
+    <div class="modal-dialog" style="width: 1000px;">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title"></h4>
+        </div>
+        <div class="modal-body">
+          <table class="table">
+            <thead>
+                <tr>
+                    <th>Add</th>
+                    <th>Modify</th>
+                    <th>Upgrade</th>
+                    <th>Remove</th>
+                    <th>Update</th>
+                </tr>
+            </thead>
+            <tbody align="left">
+                <tr>
+                    <td>--</td>
+                    <td>
+                        <ul>
+                            <li><a href="http://10.106.124.28:8000/layerindex/versioncompare/recipe/420614/" target="_blank">ias</a></li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li><a href="http://10.106.124.28:8000/layerindex/versioncompare/recipe/420604/" target="_blank">acrn-hypervisor</a> from 2019w12.3.150000p to 2019w24.3.150000p</li>
+                            <li><a href="http://10.106.124.28:8000/layerindex/versioncompare/recipe/420605/" target="_blank">curl</a> from 7.64.0 to 7.65.0</li>
+                            <li><a href="http://10.106.124.28:8000/layerindex/versioncompare/recipe/420606/" target="_blank">dbus</a> from 1.12.12 to 1.12.16</li>
+                            <li><a href="http://10.106.124.28:8000/layerindex/versioncompare/recipe/420607/" target="_blank">glib</a> from 2.58.3 to 2.60.4</li>
+                            <li><a href="http://10.106.124.28:8000/layerindex/versioncompare/recipe/420608/" target="_blank">libseccomp</a> from 2.4.0 to 2.4.1</li>
+                            <li><a href="http://10.106.124.28:8000/layerindex/versioncompare/recipe/420609/" target="_blank">linux-iot-lts2018</a> from 4.19.23 to 4.19.50</li>
+                            <li><a href="http://10.106.124.28:8000/layerindex/versioncompare/recipe/420610/" target="_blank">linux-iot-lts2018-sos</a> from 4.19.23 to 4.19.50</li>
+                            <li><a href="http://10.106.124.28:8000/layerindex/versioncompare/recipe/420611/" target="_blank">sqlite-autoconf</a> from 3270200 to 3280000</li>
+                            <li><a href="http://10.106.124.28:8000/layerindex/versioncompare/recipe/420612/" target="_blank">systemd</a> from 239 to 242</li>
+                            <li><a href="http://10.106.124.28:8000/layerindex/versioncompare/recipe/420613/" target="_blank">wpa_supplicant</a> from 2.7 to 2.8</li>
+                        </ul>
+                    </td>
+                    <td>--</td>
+                    <td>--</td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+      <!-- Modal -->
+  <div class="modal fade" id="2810005" role="dialog">
+    <div class="modal-dialog" style="width: 1000px;">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title"></h4>
+        </div>
+        <div class="modal-body">
+          <table class="table">
+            <thead>
+                <tr>
+                    <th>Add</th>
+                    <th>Modify</th>
+                    <th>Upgrade</th>
+                    <th>Remove</th>
+                    <th>Update</th>
+                </tr>
+            </thead>
+            <tbody align="left">
+                <tr>
+                    <td>--</td>
+                    <td>
+                        <ul>
+                            <li><a href="http://10.106.124.28:8000/layerindex/versioncompare/recipe/420602/" target="_blank">bzip2</a></li>
+                            <li><a href="http://10.106.124.28:8000/layerindex/versioncompare/recipe/420603/" target="_blank">systemd</a></li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li><a href="http://10.106.124.28:8000/layerindex/versioncompare/recipe/420599/" target="_blank">expat</a> from 2.2.6 to 2.2.7</li>
+                            <li><a href="http://10.106.124.28:8000/layerindex/versioncompare/recipe/420600/" target="_blank">linux-iot-lts2018</a> from 4.19.50 to 4.19.55</li>
+                            <li><a href="http://10.106.124.28:8000/layerindex/versioncompare/recipe/4205601/" target="_blank">linux-iot-lts2018-sos</a> from 4.19.50 to 4.19.55</li>
+                        </ul>
+                    </td>
+                    <td>--</td>
+                    <td>--</td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+      <!-- Modal -->
+  <div class="modal fade" id="281113" role="dialog">
+    <div class="modal-dialog" style="width: 1000px;">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title"></h4>
+        </div>
+        <div class="modal-body">
+          <table id="venkat" class="table">
+            <thead>
+                <tr>
+                    <th>Add</th>
+                    <th>Modify</th>
+                    <th>Upgrade</th>
+                    <th>Remove</th>
+                    <th>Update</th>
+                </tr>
+            </thead>
+            <tbody align="left">
+                <tr>
+                    <td>
+                        <ul>
+                            <li><a href="http://10.106.124.28:8000/layerindex/versioncompare/recipe/420615/" target="_blank">earlyapp</a></li>
+                            <li><a href="http://10.106.124.28:8000/layerindex/versioncompare/recipe/420616/" target="_blank">gst-plugins-ugly</a></li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li><a href="http://10.106.124.28:8000/layerindex/versioncompare/recipe/420624/" target="_blank">linux-iot-lts2018</a></li>
+                            <li><a href="http://10.106.124.28:8000/layerindex/versioncompare/recipe/420625/" target="_blank">openssl</a></li>
+                            <li><a href="http://10.106.124.28:8000/layerindex/versioncompare/recipe/420626/" target="_blank">python3</a></li>
+                            <li><a href="http://10.106.124.28:8000/layerindex/versioncompare/recipe/420627/" target="_blank">systemd</a></li>
+                            <li><a href="http://10.106.124.28:8000/layerindex/versioncompare/recipe/420628/" target="_blank">wavpack</a></li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li><a href="http://10.106.124.28:8000/layerindex/versioncompare/recipe/420617/" target="_blank">acrn-hypervisor</a> from 2019w09.4.153000p to 2019w12.3.150000p</li>
+                            <li><a href="http://10.106.124.28:8000/layerindex/versioncompare/recipe/420618/" target="_blank">gst-plugins-bad</a> from 1.15.1 to 1.15.2</li>
+                            <li><a href="http://10.106.124.28:8000/layerindex/versioncompare/recipe/420619/" target="_blank">gst-plugins-base</a> from 1.15.1 to 1.15.2</li>
+                            <li><a href="http://10.106.124.28:8000/layerindex/versioncompare/recipe/420620/" target="_blank">gst-plugins-good</a> from 1.15.1 to 1.15.2</li>
+                            <li><a href="http://10.106.124.28:8000/layerindex/versioncompare/recipe/420621/" target="_blank">gstreamer</a> from 1.15.1 to 1.15.2</li>
+                            <li><a href="http://10.106.124.28:8000/layerindex/versioncompare/recipe/420622/" target="_blank">gstreamer-vaapi</a> from 1.15.1 to 1.15.2</li>
+                            <li><a href="http://10.106.124.28:8000/layerindex/versioncompare/recipe/420623/" target="_blank">libseccomp</a> from 2.3.3 to 2.4.0</li>
+                        </ul>
+                    </td>
+                    <td>--</button></td>
+                    <td>--</button></td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+{% endautoescape %}
+{% endblock %}
+
+    {% block content_index_script %}
+    {% autoescape on %}
+    <script>
+        $('.img-dropdown').click(function () {
+            //$('.list-dropdown-container').hide();
+            let togglediv = $(this).closest('tr').next().find('div'); //.find('.list-dropdown-container');
+            if (togglediv.hasClass('list-dropdown-container'))
+                togglediv.removeClass('list-dropdown-container');
+            else
+                togglediv.addClass('list-dropdown-container');
+
+        });
+
+
+        // Build the chart
+        Highcharts.chart('chart2810006', {
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                type: 'pie'
+            },
+            title: {
+                text: '2810006 - 2810005'
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: false
+                    },
+                    showInLegend: true
+                }
+            },
+            series: [{
+                name: '',
+                colorByPoint: true,
+                data: [{
+                    name: 'Add',
+                    y: 0,
+                    sliced: true,
+                    selected: true
+                }, {
+                    name: 'Modify',
+                    y: 1
+                }, {
+                    name: 'Upgrade',
+                    y: 0
+                }, {
+                    name: 'Remove',
+                    y: 0
+                }, {
+                    name: 'Update',
+                    y: 0
+                }]
+            }]
+        });   
+        Highcharts.chart('chart2810005', {
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                type: 'pie'
+            },
+            title: {
+                text: '2810005 - 2810004'
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: false
+                    },
+                    showInLegend: true
+                }
+            },
+            series: [{
+                name: '',
+                colorByPoint: true,
+                data: [{
+                    name: 'Add',
+                    y: 0,
+                    sliced: true,
+                    selected: true
+                }, {
+                    name: 'Modify',
+                    y: 2
+                }, {
+                    name: 'Upgrade',
+                    y: 3
+                }, {
+                    name: 'Remove',
+                    y: 0
+                }, {
+                    name: 'Update',
+                    y: 0
+                }]
+            }]
+        });
+        Highcharts.chart('chart2810004', {
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                type: 'pie'
+            },
+            title: {
+                text: '2810004 - 281113'
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: false
+                    },
+                    showInLegend: true
+                }
+            },
+            series: [{
+                name: '',
+                colorByPoint: true,
+                data: [{
+                    name: 'Add',
+                    y: 0,
+                    sliced: true,
+                    selected: true
+                }, {
+                    name: 'Modify',
+                    y: 1
+                }, {
+                    name: 'Upgrade',
+                    y: 10
+                }, {
+                    name: 'Remove',
+                    y: 0
+                }, {
+                    name: 'Update',
+                    y: 0
+                }]
+            }]
+        });
+        Highcharts.chart('chart281113', {
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                type: 'pie'
+            },
+            title: {
+                text: '281113 - 28100'
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: false
+                    },
+                    showInLegend: true
+                }
+            },
+            series: [{
+                name: '',
+                colorByPoint: true,
+                data: [{
+                    name: 'Add',
+                    y: 2,
+                    sliced: true,
+                    selected: true
+                }, {
+                    name: 'Modify',
+                    y: 5
+                }, {
+                    name: 'Upgrade',
+                    y: 7
+                }, {
+                    name: 'Remove',
+                    y: 0
+                }, {
+                    name: 'Update',
+                    y: 0
+                }]
+            }]
+        });
+        $(document).ready(function() {
+    $('#venkat').DataTable();
+} );   
+    </script>
+    {% endautoescape %}
+    {% endblock %}

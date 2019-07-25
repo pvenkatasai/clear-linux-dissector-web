@@ -1,0 +1,139 @@
+﻿{% extends "new_base.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% comment %}
+
+  layerindex-web - Front page
+
+  Copyright (C) 2019 Intel Corporation
+  Licensed under the MIT license, see COPYING.MIT for details
+
+{% endcomment %}
+
+
+{% block content %}
+{% autoescape on %}
+    <br>
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-body container-body">
+                
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="row form-group">
+                            <div class="col-lg-6" style="border: solid 1px;">
+                                <b>
+                                <h2>Native</h2>
+                                <ul>
+                                    <li>Today's build: <a href="http://milkomeda02.iind.intel.com/release/apl/master/gp2.0/20190724-30480/gordonpeak/native/">20190724-30480</a></li>
+                                    <li>Lastest Build: <a href="http://milkomeda02.iind.intel.com/release/apl/master/gp2.0/20190724-30480/gordonpeak/native/">20190724-30480</a></li>
+                                </ul>
+                                </b>
+                            </div>
+                            <div class="col-lg-6" style="border: solid 1px;">
+                                <b>
+                                <h2>SOS</h2>
+                                <ul>
+                                    <li>Today's build: --</li>
+                                    <li>Lastest Build: <a href="http://milkomeda02.iind.intel.com/release/apl/master/gp2.0/sos-mr1/20190718-2810007/gordonpeak/virtualization/">20190718-2810007</a></li>
+                                </ul>
+                                </b>
+                            </div>
+                        </div>  
+                        <div class="row form-group">
+                            <div class="col-lg-6" style="border: solid 1px;">
+                                <img style="height: 10%;width: 80%;display: block;margin-left: auto;margin-right: auto;" src="https://ugcorigin.s-microsoft.com/100/3880c48d-f983-4915-b4c9-391381259a43/200/v2/image.jpg" >
+                            </div>
+                            <div class="col-lg-6" style="border: solid 1px;">
+                                <img style="height: 10%;width: 80%;display: block;margin-left: auto;margin-right: auto;" src="https://ugcorigin.s-microsoft.com/100/3880c48d-f983-4915-b4c9-391381259a43/200/v2/image.jpg" >
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-lg-3">
+                                <h2>MileStones</h2>
+                                <ul>
+                                    <b>
+                                    <li><a href="http://milkomeda02.iind.intel.com/release/apl/master/gp2.0/sos-alpha/" target="_blank">SOS-alpha</a></li>
+                                    <li><a href="http://milkomeda02.iind.intel.com/release/apl/master/gp2.0/sos-beta/" target="_blank">SOS-beta</a></li>
+                                    <li><a href="http://milkomeda02.iind.intel.com/release/apl/master/gp2.0/sos-pv/" target="_blank">SOS-PV</a></li>
+                                    <li><a href="http://milkomeda02.iind.intel.com/release/apl/master/gp2.0/sos-mr1/" target="_blank">SOS-MR1</a></li>
+                                    </b>
+                                </ul>
+                            </div>
+                            <div class="col-lg-3">
+                                <h2>Builds</h2>
+                                <b>
+                                <ul>
+                                    <li><a href="http://milkomeda02.iind.intel.com/release/apl/master/gp2.0/" target="_blank">Daily Builds</a></li>
+                                    <li><a href="#" target="block">Eng Builds</a></li>
+                                    <li><a href="#" target="block">Request Eng Builds</a></li>
+                                </ul>
+                                </b>
+                            </div>
+                            <div class="col-lg-3">
+                                <h2>Docs</h2>
+                                <b>
+                                    <ul>
+                                        <li><a href="#" target="block">GSG</a></li>
+                                        <li><a href="#" target="block">Release Notes</a></li>
+                                    </ul>
+                                </b>
+                            </div>
+                            <div class="col-lg-3">
+                                <h2>References</h2>
+                                <b>
+                                    <ul>
+                                        <li><a href="#" target="block">Wikis</a></li>
+                                        <li><a href="#" target="block">Scripts</a></li>
+                                        <li><a href="#" target="block">Useful Links</a></li>
+                                        <li><a href="#" target="block">Others</a></li>
+                                    </ul>
+                                </b>
+                            </div>
+                        </div>
+                     </div>
+                    <!-- 
+                    <div class="col-lg-12">
+                        <div class="row form-group">
+                            <div class="col-lg-12">
+                                <img src="https://ugcorigin.s-microsoft.com/100/3880c48d-f983-4915-b4c9-391381259a43/200/v2/image.jpg">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-lg-3">
+                                callback, Optional. A function to be executed after the toggle() method is completed. To learn more about callback, visit our jQuery Callback chapter ...
+                            </div>
+                            <div class="col-lg-3">
+                                callback, Optional. A function to be executed after the toggle() method is completed. To learn more about callback, visit our jQuery Callback chapter ...
+                            </div>
+                            <div class="col-lg-3">
+                                callback, Optional. A function to be executed after the toggle() method is completed. To learn more about callback, visit our jQuery Callback chapter ...
+                            </div>
+                            <div class="col-lg-3">
+                                test1callback, Optional. A function to be executed after the toggle() method is completed. To learn more about callback, visit our jQuery Callback chapter ...
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-lg-6">
+                                callback, Optional. A function to be executed after the toggle() method is completed. To learn more about callback, visit our jQuery Callback chapter ...
+                            </div>
+                            <div class="col-lg-6">
+                                callback, Optional. A function to be executed after the toggle() method is completed. To learn more about callback, visit our jQuery Callback chapter ...
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-lg-12">
+                                callback, Optional. A function to be executed after the toggle() method is completed. To learn more about callback, visit our jQuery Callback chapter ...
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </div>
+
+{% endautoescape %}
+
+{% endblock %}
+

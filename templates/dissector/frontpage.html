@@ -57,6 +57,22 @@
                 </div>
             </div><br><br>
             {% endif %}
+            <div class="row">
+                <div class="col-md-3">
+                    <a class="btn btn-large btn-primary" href="{% url 'local_binaries_compare' %}">Local binaries compare</a>
+                </div>
+                <div class="col-md-8">
+                    <p>To compare local clear linux builds</p>
+                </div>
+            </div><br><br>
+            <div class="row">
+                <div class="col-md-3">
+                   <a class="btn btn-large btn-primary" href="{% url 'LocalNativeBuilds' %}">LocalNativeBuilds</a>
+                </div>
+                <div class="col-md-8">
+                    <p>To show local native builds</p>
+                </div>
+            </div><br><br>
         </div>
 
 {% endautoescape %}

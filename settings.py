@@ -5,23 +5,34 @@
 
 import os
 
-DEBUG = False
+ALLOWED_HOSTS = ['10.106.124.28','localhost']
+DEBUG = True
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+     ('venkatasai patnana', 'venkata.sai.patnana@intel.com'),
 )
 
 MANAGERS = ADMINS
 
+     #   'ENGINE': 'django.db.backends.mysql',
+     #   'NAME': os.path.join(BASE_DIR, 'mysql'),
+        #'ENGINE': 'django.db.backends.', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+        #'NAME': '',                      # Or path to database file if using sqlite3 (full path recommended).
+     #   'USER': 'root',                      # Not used with sqlite3.
+    #    'PASSWORD': 'intel123',                  # Not used with sqlite3.
+    #    'HOST': 'localhost',                      # Set to empty string for localhost. Not used with sqlite3.
+        #'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+   # }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '',                      # Or path to database file if using sqlite3 (full path recommended).
-        'USER': '',                      # Not used with sqlite3.
-        'PASSWORD': '',                  # Not used with sqlite3.
-        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
-    }
+        'ENGINE': 'django.db.backends.mysql',
+        #'NAME': 'mydb',                      # Or path to database file if using sqlite3 (full path recommended).
+        'NAME': 'mydatabase',                      # Or path to database file if using sqlite3 (full path recommended).
+        'USER': 'vpatnana',                      # Not used with sqlite3.
+        'PASSWORD': 'intel123',                  # Not used with sqlite3.
+     }
 }
 
 # Local time zone for this installation. Choices can be found here:
@@ -90,7 +101,7 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = ''
+SECRET_KEY = '@hh&)hed7(d*lqzlipkt)6)hdahnc$vz8*q&gulc%mp^xt5q=3=dasf'
 
 MIDDLEWARE = (
     'corsheaders.middleware.CorsMiddleware',
@@ -157,6 +168,7 @@ INSTALLED_APPS = (
     'axes',
     'rest_framework',
     'corsheaders',
+    'newview',
 )
 
 AUTHENTICATION_BACKENDS = [
@@ -232,7 +244,7 @@ DEFAULT_FROM_EMAIL = 'noreply@example.com'
 LOGIN_REDIRECT_URL = '/layerindex'
 
 # Full path to directory where layers should be fetched into by the update script
-LAYER_FETCH_DIR = ""
+LAYER_FETCH_DIR = "/home/vpatnana/practice/workdir"
 
 # Base temporary directory in which to create a directory in which to run BitBake
 TEMP_BASE_DIR = "/tmp"
@@ -263,6 +275,9 @@ SEND_PUBLISH_EMAIL = True
 # RabbitMQ settings
 RABBIT_BROKER = 'amqp://'
 RABBIT_BACKEND = 'rpc://'
+# RabbitMQ settings
+#RABBIT_BROKER = 'amqp://' + os.getenv('RABBITMQ_DEFAULT_USER') + ':' + os.getenv('RABBITMQ_DEFAULT_PASS') + '@layersrabbit:5672/'
+#RABBIT_BACKEND = 'rpc://layersrabbit/'
 
 # Used for fetching repo
 PARALLEL_JOBS = "4"
@@ -294,10 +309,10 @@ TOOLS_LOG_DIR = ""
 FILE_SERVE_METHOD = "direct"
 
 # Path to Go-based dissector command-line tools
-DISSECTOR_BINDIR = ""
+DISSECTOR_BINDIR = "/opt/dissector/"
 
 # Path to package sources for other distros (used when doing release comparisons)
-VERSION_COMPARE_SOURCE_DIR = ""
+VERSION_COMPARE_SOURCE_DIR = "/home/vpatnana/practice/"
 
 # Path and URL prefix for handling patches imported with image comparison data
 IMAGE_COMPARE_PATCH_DIR = BASE_DIR + "/static/patches"

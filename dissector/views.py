@@ -40,7 +40,7 @@ from pkg_resources import parse_version
 
 import settings
 from dissector.forms import (ImageComparisonCreateForm,
-                              ImageComparisonRecipeForm,
+                              ImageComparisonRecipeForm, LocalBuildDiffForm,
                               VersionComparisonForm, ComparisonImportForm)
 from dissector.models import (ImageComparison, ImageComparisonRecipe,
                                VersionComparison, VersionComparisonDifference,
@@ -596,6 +596,25 @@ class ComparisonImportView(FormView):
         res = tasks.run_update_command.apply_async((branch_name, cmd), task_id=task_id)
         return HttpResponseRedirect(reverse_lazy('task_status', kwargs={'task_id': task_id}))
 
+class LocalBinariesCompareView(FormView):
+    template_name = 'dissector/local_binaries_compare.html'
+    form_class = LocalBuildDiffForm
+    success_url = '/thanks/'
+
+    def form_valid(self, form):
+        # This method is called when valid form data has been POSTed.
+        # It should return an HttpResponse.
+        form.cleaned_data['']
+        form.send_email()
+        return super().form_valid(form)
+
+class LocalNativeBuildsView(TemplateView):
+    def get_context_data(self, *args, **kwargs):
+        Builds=os.listdir('/tools/release/apl/master/gp2.0')
+        context = super(LocalNativeBuildsView, self).get_context_data(*args, **kwargs)
+        context['message'] = 'Local Native Daily Builds'
+        context['Builds'] = Builds
+        return context 
 
 class FrontPageView(TemplateView):
     def get_context_data(self, **kwargs):
