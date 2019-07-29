@@ -28,7 +28,7 @@ urlpatterns = [
         name="comparison_import"),
     url(r'^LocalNativeBuilds/$',
         LocalNativeBuildsView.as_view(
-            template_name='dissector/LocalNativeBuildss.html'),
+            template_name='dissector/LocalNativeBuilds.html'),
         name="LocalNativeBuilds"),
     url(r'^imagecompare/$',
         ImageCompareView.as_view(

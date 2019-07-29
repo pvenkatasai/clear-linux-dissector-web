@@ -104,15 +104,15 @@ STATICFILES_FINDERS = (
 SECRET_KEY = '@hh&)hed7(d*lqzlipkt)6)hdahnc$vz8*q&gulc%mp^xt5q=3=dasf'
 
 MIDDLEWARE = (
-    'corsheaders.middleware.CorsMiddleware',
-    'django.middleware.common.CommonMiddleware',
+    #'corsheaders.middleware.CorsMiddleware',
+    #'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'reversion.middleware.RevisionMiddleware',
-    'layerindex.middleware.LoginRequiredMiddleware',
+    #'django.contrib.messages.middleware.MessageMiddleware',
+    #'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    #'reversion.middleware.RevisionMiddleware',
+    #'layerindex.middleware.LoginRequiredMiddleware',
 )
 
 # We allow CORS calls from everybody
@@ -319,6 +319,7 @@ IMAGE_COMPARE_PATCH_DIR = BASE_DIR + "/static/patches"
 IMAGE_COMPARE_PATCH_URL_PREFIX = "/layerindex/imagecompare/patch/"
 
 LOGIN_EXEMPT_URLS = (
+    '^/newview/',
     '^/accounts/register/',
     '^/accounts/reset/[0-9A-Za-z_\-]+/[0-9A-Za-z]{1,3}-[0-9A-Za-z]{1,20}/',
     '^/accounts/activate/[-:\w]+/$',
@@ -327,5 +328,5 @@ LOGIN_EXEMPT_URLS = (
     '^/accounts/lockout/',
     '^/admin/',
     '^/captcha/image/(.*)',
-    '^/layerindex/api/(.*)',
+    '^/layerindex/',
 )
