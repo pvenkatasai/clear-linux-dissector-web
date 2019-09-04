@@ -1,22 +1,63 @@
 {% autoescape on %}
-    <ul>
-    {% for diff in comparison.versioncomparisondifference_set.all %}
-    <li>
-    {% if diff.change_type == 'A' %}
-        Added <a href="{% url 'version_comparison_recipe' diff.id %}">{{ diff.pn }}</a>
-    {% elif diff.change_type == 'U' %}
-        Upgraded <a href="{% url 'version_comparison_recipe' diff.id %}">{{ diff.pn }}</a> from {{ diff.oldvalue }} to {{ diff.newvalue }}
-    {% elif diff.change_type == 'D' %}
-        Downgraded <a href="{% url 'version_comparison_recipe' diff.id %}">{{ diff.pn }}</a> from {{ diff.oldvalue }} to {{ diff.newvalue }}
-    {% elif diff.change_type == 'V' %}
-        {{ diff.pn }}: versions changed from {{ diff.oldvalue }} to {{ diff.newvalue }}
-    {% elif diff.change_type == 'R' %}
-        Removed <a href="{% url 'version_comparison_recipe' diff.id %}">{{ diff.pn }}</a>
-    {% elif diff.change_type == 'M' %}
-        Modified <a href="{% url 'version_comparison_recipe' diff.id %}">{{ diff.pn }}</a>
-    {% endif %}
-    </li>
-    {% endfor %}
-    </ul>
-    </div>
+<table id="test" class="table">
+            <thead>
+                <tr>
+                    <th>Add</th>
+                    <th>Upgrade</th>
+                    <th>Delete</th>
+                    <th>Version</th>
+                    <th>Remove</th>
+                    <th>Modify</th>
+                </tr>
+            </thead>
+            <tbody align="left">
+                <tr>
+                    <td>
+                      {% for a in add %}
+                      <a href="#">{{ a }}</a></br>
+                      {% endfor %}
+                     </td>
+                    <td>
+                      {% for u in upgrade %}
+                      <a href="#">{{ u }}</a></br>
+                      {% endfor %}
+                    </td>
+                    <td>
+                      {% for d in delete %}
+                      <a href="#">{{ d }}</a></br>
+                      {% endfor %}
+                    </td>
+                    <td>
+                      {% for v in version %}
+                      <a href="#">{{ v }}</a></br>
+                      {% endfor %}
+                     </td>
+                    <td>
+                      {% for r in remove %}
+                      <a href="#">{{ r }}</a></br>
+                      {% endfor %}
+                    </td>
+                    <td>
+                      {% for m in modify %}
+                      <a href="#">{{ m }}</a></br>
+                      {% endfor %}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
 {% endautoescape %}
+{% block scripts1 %}
+    <script>
+	$('#test tr th').each(function(i) {
+		//select all tds in this column
+		var tds = $(this).parents('table')
+			.find('tr td:nth-child(' + (i + 1) + ')');
+		if(tds.is(':empty')) {
+			//hide header
+			$(this).hide();
+			//hide cells
+			tds.hide();
+		} 
+	}); 
+    </script>
+{% endblock %}

@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "new_base.html" %}
 {% load i18n %}
 {% load static %}
 
@@ -19,10 +19,10 @@
 {% autoescape on %}
 
 <div id="comparison-buttons" class="pull-right" style="display: none;">
-    <a href="{% url 'version_comparison_regenerate' from_branch.name to_branch.name %}" class="btn btn-default">Regenerate</a>
+    <a href="{% url 'version_comparison_regenerate' from_branch.name to_branch.name %}" class="btn btn-default" style="margin-right: 195px;top: 10px;">Regenerate</a>
 </div>
 
-<h2>{{ from_branch }} to {{ to_branch }}</h2>
+<h2 style="margin-left: 195px" >{{ from_branch }} to {{ to_branch }}</h2>
 
     <div class="container" id="comparisonview">
         <div id="comparisonview-status" class="well well-lg" style="text-align: center;">
@@ -64,5 +64,20 @@
         $(document).ready(function() {
             showComparison();
         });
+    </script>
+{% endblock %}
+{% block scripts1 %}
+    <script>
+	$('#test tr th').each(function(i) {
+		//select all tds in this column
+		var tds = $(this).parents('table')
+			.find('tr td:nth-child(' + (i + 1) + ')');
+		if(tds.is(':empty')) {
+			//hide header
+			$(this).hide();
+			//hide cells
+			tds.hide();
+		} 
+	}); 
     </script>
 {% endblock %}

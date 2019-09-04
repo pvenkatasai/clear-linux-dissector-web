@@ -46,8 +46,8 @@
                                             <span class="caret"></span>
                                         </a>
                                         <ul class="dropdown-menu">
-                                            <li><a href="{% url 'diff_view' %}">Native</a></li>
-                                            <li><a href="#">SoS</a></li>
+                                            <li><a href="{% url 'version_comparison_select1' %}">Native</a></li>
+                                            <li><a href="{% url 'version_comparison_select1' %}">SoS</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="{% url 'diff_view' %}">SOS Diff view</a></li>
@@ -89,6 +89,8 @@
     <script src="assets/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
     -->
    	{% block content_index_script %}{% endblock %}
+   	{% block scripts %}{% endblock %}
+   	{% block scripts1 %}{% endblock %}
 
 </body>
 </html>
