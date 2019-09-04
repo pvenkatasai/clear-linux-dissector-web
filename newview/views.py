@@ -66,7 +66,10 @@ class diff_home_view(TemplateView):
 class DiffViewNew(TemplateView):
     def get_context_data(self, *args, **kwargs):
         #Builds=os.listdir('/tools/release/apl/master/gp2.0')
-        context = super(diff_home_view, self).get_context_data(*args, **kwargs)
+        context = super(DiffViewNew, self).get_context_data(*args, **kwargs)
+        Builds=os.listdir('/tools/release/apl/master/gp2.0/sos-mr1')
+        context['message'] = 'Local SOS-MR1 Native Daily Builds'
+        context['Builds'] = Builds
         #context['message'] = 'Local Native Daily Builds'
         #context['Builds'] = Builds
         return context

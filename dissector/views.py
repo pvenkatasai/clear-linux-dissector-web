@@ -438,6 +438,39 @@ class VersionCompareContentView(TemplateView):
                 vercmp.status = 'F'
                 vercmp.save()
                 raise
+        
+        #context['add'] = [1,2,3,4,5,6]
+        add=[]
+        upgrade=[]
+        delete=[]
+        version=[]
+        remove=[]
+        modify=[]
+
+        for diff in vercmp.versioncomparisondifference_set.all():
+             if diff.change_type == 'A':
+                add.append(diff.pn)
+             if diff.change_type == 'U':
+                upgrade.append(diff.pn)
+             if diff.change_type == 'D':
+                delete.append(diff.pn)
+             if diff.change_type == 'V':
+                version.append(diff.pn)
+             if diff.change_type == 'R':
+                remove.append(diff.pn)
+             if diff.change_type == 'M':
+                modify.append(diff.pn)
+
+        context['add'] = add
+        context['upgrade'] = upgrade
+        context['delete'] = delete
+        context['version'] = version
+        context['remove'] = remove
+        context['modify'] = modify
+        #context['add'] = [1,2,3,4,5,6]
+
+
+
         context['comparison'] = vercmp
         return context
 
