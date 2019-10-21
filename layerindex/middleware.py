@@ -4,11 +4,28 @@
 #
 # Licensed under the MIT license, see COPYING.MIT for details
 
+from django.contrib import auth
 from django.utils.deprecation import MiddlewareMixin
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 import settings
 import re
+from datetime import datetime, timedelta
+
+#from django.conf import settings
+
+class SessionIdleTimeoutMiddleware(MiddlewareMixin):
+    def process_request(self, request):
+        if request.user.is_authenticated():
+            current_datetime = datetime.timestamp(datetime.now())
+            if ('last_access' in request.session):
+                print(request.session['last_access'],current_datetime)
+                last = (current_datetime - request.session['last_access'])
+                if last > settings.SESSION_IDLE_TIMEOUT:
+                    logout(request, login.html)
+            else:
+                request.session['last_access'] = current_datetime
+        return None
 
 class LoginRequiredMiddleware(MiddlewareMixin):
     """

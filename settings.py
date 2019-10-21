@@ -5,7 +5,7 @@
 
 import os
 
-ALLOWED_HOSTS = ['10.106.124.28','localhost']
+ALLOWED_HOSTS = ['10.106.124.28','localhost', 'hydubuntuvm001', 'venkatsai']
 DEBUG = True
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -104,15 +104,16 @@ STATICFILES_FINDERS = (
 SECRET_KEY = '@hh&)hed7(d*lqzlipkt)6)hdahnc$vz8*q&gulc%mp^xt5q=3=dasf'
 
 MIDDLEWARE = (
-    #'corsheaders.middleware.CorsMiddleware',
-    #'django.middleware.common.CommonMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    #'django.contrib.messages.middleware.MessageMiddleware',
-    #'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    #'reversion.middleware.RevisionMiddleware',
-    #'layerindex.middleware.LoginRequiredMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'reversion.middleware.RevisionMiddleware',
+    'layerindex.middleware.LoginRequiredMiddleware',
+    'layerindex.middleware.SessionIdleTimeoutMiddleware', 
 )
 
 # We allow CORS calls from everybody
@@ -120,6 +121,7 @@ CORS_ORIGIN_ALLOW_ALL = True
 # for the API pages
 CORS_URLS_REGEX = r'.*/api/.*';
 
+AUTO_LOGOUT_DELAY=1
 
 # Clickjacking protection
 X_FRAME_OPTIONS = 'DENY'
@@ -317,6 +319,13 @@ VERSION_COMPARE_SOURCE_DIR = "/home/vpatnana/practice/"
 # Path and URL prefix for handling patches imported with image comparison data
 IMAGE_COMPARE_PATCH_DIR = BASE_DIR + "/static/patches"
 IMAGE_COMPARE_PATCH_URL_PREFIX = "/layerindex/imagecompare/patch/"
+
+#TIME= 2*60  # 5 min setting as Idle Time OUT
+#SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
+#SESSION_EXPIRE_AT_BROWSER_CLOSE= True
+SESSION_COOKIE_AGE = 2*60#change expired session
+SESSION_IDLE_TIMEOUT = 2*60  #logout
+
 
 LOGIN_EXEMPT_URLS = (
     '^/newview/',
